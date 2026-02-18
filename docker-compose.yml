@@ -1,0 +1,61 @@
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: openvault-db
+    environment:
+      POSTGRES_DB: openvault
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - openvault-network
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Spring Boot API
+  api:
+    build:
+      context: ./openvault-api
+      dockerfile: Dockerfile
+    container_name: openvault-api
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/openvault
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      JWT_SECRET: ${JWT_SECRET:-404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - openvault-network
+    restart: unless-stopped
+
+  # Angular Frontend
+  frontend:
+    build:
+      context: ./openvault-frontend
+      dockerfile: Dockerfile
+    container_name: openvault-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - api
+    networks:
+      - openvault-network
+    restart: unless-stopped
+
+networks:
+  openvault-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
