@@ -1,0 +1,28 @@
+# Maven
+target/
+.mvn/
+mvnw
+mvnw.cmd
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+HELP.md
+README.md
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
