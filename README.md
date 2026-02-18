@@ -1,8 +1,7 @@
 # 🏦 OpenVault : Système de Gestion Bancaire Full-Stack
 
-[![Java CI with Maven](https://github.com/votre-username/openvault/actions/workflows/maven.yml/badge.svg)](https://github.com/votre-username/openvault/actions)
-![Java Version](https://img.shields.io/badge/Java-21-orange)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2-brightgreen)
+![Java Version](https://img.shields.io/badge/Java-25-orange)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.2-brightgreen)
 ![Angular](https://img.shields.io/badge/Angular-17-red)
 
 ## 📌 Présentation
