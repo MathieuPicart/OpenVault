@@ -2,7 +2,7 @@
 
 ![Java Version](https://img.shields.io/badge/Java-25-orange)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.0.2-brightgreen)
-![Angular](https://img.shields.io/badge/Angular-17-red)
+![Angular](https://img.shields.io/badge/Angular-21-red)
 
 ## 📌 Présentation
 **OpenVault** est une application web de gestion bancaire moderne et sécurisée. Ce projet a été conçu pour démontrer une maîtrise complète du développement d'entreprise en utilisant l'écosystème **Java/Spring Boot** pour le backend et **Angular** pour le frontend.
@@ -17,8 +17,8 @@ L'objectif principal est de garantir la **fiabilité absolue des transactions** 
 - **Gestion de Profil** : Génération automatique d'IBAN et sécurisation des données personnelles.
 
 ## 🛠 Stack Technique
-- **Backend** : Java 21, Spring Boot 3, Spring Security, Spring Data JPA (Hibernate).
-- **Frontend** : Angular 17, TypeScript, Tailwind CSS, RxJS.
+- **Backend** : Java 25, Spring Boot 4, Spring Security, Spring Data JPA (Hibernate).
+- **Frontend** : Angular 21, TypeScript, Tailwind CSS, RxJS.
 - **Base de données** : PostgreSQL.
 - **Documentation API** : Swagger UI / OpenAPI 3.
 - **Qualité & Tests** : JUnit 5, Mockito, Jacoco (couverture de code).
